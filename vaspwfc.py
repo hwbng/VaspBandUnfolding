@@ -958,10 +958,10 @@ class vaspwfc(object):
                     phi_j = self.wfc_r(ispin + 1, ikpt + 1, iband, norm=norm)
                     phi_j_abs = np.abs(phi_j)
 
-                    print(
-                        "Calculating IPR of #spin %4d, #kpt %4d, #band %4d"
-                        % (ispin + 1, ikpt + 1, iband)
-                    )
+                    # print(
+                    #     "Calculating IPR of #spin %4d, #kpt %4d, #band %4d"
+                    #     % (ispin + 1, ikpt + 1, iband)
+                    # )
                     self.ipr[ispin, ikpt, iband - 1, 0] = (
                         self._kpath[ikpt] if self._kpath is not None else 0
                     )
