@@ -947,9 +947,10 @@ class vaspwfc(object):
         where n iters over the number of grid points.
         """
         # Vasp bands count from 1!
+        # Count all bands by default
         if not band_ind_list:
             band_ind_list = list(range(1, self._nbands + 1))
-        self.ipr = np.zeros((self._nspin, self._nkpts, len(band_ind_list), 3))
+        self.ipr = np.zeros((self._nspin, self._nkpts, self._nbands, 3))
 
         for ispin in range(self._nspin):
             for ikpt in range(self._nkpts):
